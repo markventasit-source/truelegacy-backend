@@ -22,7 +22,7 @@ const allowedOrigins = (
     "http://localhost:5174",
     "https://truelegacyindia.com",
     "https://www.truelegacyindia.com",
-    "https://admin.truelegacy.in",
+    "https://admin.truelegacyindia.com",
     "https://api.truelegacyindia.com",
   ].join(",")
 )
