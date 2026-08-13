@@ -1,0 +1,44 @@
+{
+  "name": "true-legacy-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TTJ-s/true-legacy-backend.git"
+  },
+  "author": "hello-world-ttj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TTJ-s/true-legacy-backend/issues"
+  },
+  "homepage": "https://github.com/TTJ-s/true-legacy-backend#readme",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.919.0",
+    "@aws-sdk/lib-storage": "^3.919.0",
+    "@aws-sdk/s3-request-presigner": "^3.995.0",
+    "axios": "^1.13.1",
+    "bcrypt": "^6.0.0",
+    "cli-color": "^2.0.4",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "file-type": "^21.0.0",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.6.0",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.10",
+    "nodemon": "^3.1.10",
+    "pdf-lib": "^1.17.1",
+    "uuid": "^13.0.0",
+    "volleyball": "^1.5.1"
+  }
+}
