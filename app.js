@@ -8,6 +8,7 @@ const routes = require("./src/routes");
 const fs = require("fs");
 const path = require("path");
 const { get_blog_by_slug } = require("./src/modules/pages/pages.controller");
+const { generateSitemap } = require("./src/modules/pages/sitemap.service");
 const axios = require("axios");
 
 //! Create an instance of the Express application
@@ -174,6 +175,19 @@ app.get("/resources/:slug", async (req, res) => {
 //* No route matched for API
 app.use(`${BASE_PATH}/*path`, (req, res) => {
   return response_handler(res, 404, "🚫 API Route not found");
+});
+
+//* Dynamic sitemap — generated live from published blogs (no frontend deploy needed)
+app.get("/sitemap.xml", async (req, res) => {
+  try {
+    const siteOrigin = process.env.SITE_ORIGIN || "https://truelegacyindia.com";
+    const xml = await generateSitemap(siteOrigin);
+    res.set("Content-Type", "application/xml");
+    res.set("Cache-Control", "public, max-age=1800");
+    res.send(xml);
+  } catch (error) {
+    return res.status(500).send("Error generating sitemap");
+  }
 });
 
 app.listen(PORT, () => {
